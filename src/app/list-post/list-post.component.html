@@ -1,0 +1,19 @@
+<div class="container-fluid my-2 p-3">
+    <div class="row">
+        <div class="row row-cols-1 row-cols-md-4 g-4">
+            <div class="col" *ngFor="let item of allPosts$|async">
+                <div class="card">
+                    <img [src]="item.posturl" class="card-img-top" alt="Hollywood Sign on The Hill" />
+                    <div class="card-body">
+                        <h5 class="card-title">{{item.posttitle}}</h5>
+                        <p class="card-text">
+                            {{item.caption}}
+                        </p>
+                        <button type="button" (click)="editPost(item)" class="btn btn-secondary">Edit</button>
+                        <button type="button" (click)="deletePost(item.postid)" class="btn btn-danger">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
